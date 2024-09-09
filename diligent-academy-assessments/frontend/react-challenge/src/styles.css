@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  max-width: 768px;
+  margin: auto;
+}
+
+.heroes-list {
+  list-style: none;
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.heroes-list-item {
+  cursor: pointer;
+}
+
+.heroes-list-item:hover {
+  font-weight: bold;
+}
+
+.heroes-list-item p {
+  margin: 0;
+}

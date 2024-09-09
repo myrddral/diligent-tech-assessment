@@ -1,12 +1,12 @@
-import HeroesList from "./heroes-list";
+import HeroesList from './heroes-list';
+import './styles.css';
 
 function App() {
-
   return (
-    <div>
+    <main className='main'>
       <h1>App</h1>
       <HeroesList />
-    </div>
+    </main>
   );
 }
 
