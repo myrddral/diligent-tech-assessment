@@ -15,22 +15,14 @@ export function useHeroes() {
   useEffect(() => {
     const promise = callApi<Hero[]>('heroes');
     promise
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
+      .then((data) => setData(data))
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
   }, []);
 
   const setAvailable = (heroId: number, available: boolean) => {
     const updatedHeroes = data.map((hero) => {
-      if (hero.id === heroId) {
-        return { ...hero, available };
-      }
-      return hero;
+      return hero.id === heroId ? { ...hero, available } : hero;
     });
     setData(updatedHeroes);
   };

@@ -12,6 +12,10 @@ function HeroesList() {
     return <p>Error: Failed to fetch heroes</p>;
   }
 
+  if (heroes.length === 0) {
+    return <p>No heroes found :(</p>;
+  }
+
   return (
     <>
       <h2>Heroes</h2>
